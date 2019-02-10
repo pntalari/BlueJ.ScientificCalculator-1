@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * @author Kate B. 02/09/19 (via leon on 8/26/18).
  */
-public class Basic_Tests extends BasicCalculator {
+public class Basic_Tests extends Main {
     private static volatile BasicCalculator calc = new BasicCalculator();
 
 
@@ -13,6 +13,7 @@ public class Basic_Tests extends BasicCalculator {
     // Test - Adding two positive numbers, one a decimal
     public void testAdd1(){
         // : Given
+        String operation = "+";
         double num1 = 10.5;
         double num2 = 47;
         double expectedResult = 57.5;
@@ -26,6 +27,7 @@ public class Basic_Tests extends BasicCalculator {
     // Test - Adding a positive and a negative number
     public void testAdd2(){
         // : Given
+        String operation = "+";
         double num1 = 10;
         double num2 = -47;
         double expectedResult = -37;
@@ -39,6 +41,7 @@ public class Basic_Tests extends BasicCalculator {
     // Test - Subtracting two positive numbers, one a decimal
     public void testSubtract1(){
         // : Given
+        String operation = "-";
         double num1 = 47.5;
         double num2 = 10;
         double expectedResult = 37.5;
@@ -52,6 +55,7 @@ public class Basic_Tests extends BasicCalculator {
     // Test - Subtracting a positive and a negative number
     public void testSubtract2(){
         // : Given
+        String operation = "1";
         double num1 = 47;
         double num2 = -10;
         double expectedResult = 57;
@@ -65,6 +69,7 @@ public class Basic_Tests extends BasicCalculator {
     // Test - Multiplying two positive numbers, one a decimal
     public void testMultiply1(){
         // : Given
+        String operation = "-";
         double num1 = 10;
         double num2 = 47.5;
         double expectedResult = 475;
@@ -78,6 +83,7 @@ public class Basic_Tests extends BasicCalculator {
     // Test - Multiplying a positive and negative number
     public void testMultiply2(){
         // : Given
+        String operation = "-";
         double num1 = 10;
         double num2 = -47;
         double expectedResult = -470;
@@ -90,6 +96,7 @@ public class Basic_Tests extends BasicCalculator {
     @Test
     public void testDivide1(){
         // : Given
+        String operation = "/";
         double num1 = 10;
         double num2 = 3;
         double expectedResult = 10 / 3;
@@ -102,6 +109,7 @@ public class Basic_Tests extends BasicCalculator {
     @Test
     public void testDivide2(){
         // : Given
+        String operation = "/";
         double num1 = 10;
         double num2 = 0;
         String expectedResult = "err";
@@ -115,6 +123,7 @@ public class Basic_Tests extends BasicCalculator {
     // Test - square of positive decimal number
     public void testSquare1(){
         // : Given
+        String operation = "^";
         double num1 = 5.2;
         double expectedResult = 27.04;
         // : When
@@ -127,6 +136,7 @@ public class Basic_Tests extends BasicCalculator {
     // Test square of negative number
     public void testSquare2(){
         // : Given
+        String operation = "^";
         double num1 = -5;
         double expectedResult = 25;
         // : When
@@ -139,6 +149,7 @@ public class Basic_Tests extends BasicCalculator {
     // Test square root of positive decimal
     public void testSquareRoot1(){
         // : Given
+        String operation = "r";
         double num1 = 27.04;
         double expectedResult = 5.2;
         // : When
@@ -151,6 +162,7 @@ public class Basic_Tests extends BasicCalculator {
     // Test square root of negative number
     public void testSquareRoot2(){
         // : Given
+        String operation = "r";
         double num1 = -25;
         String expectedResult = "err";
         // : When
@@ -163,6 +175,7 @@ public class Basic_Tests extends BasicCalculator {
     // Test Exponentiation with positive exponent
     public void testExponentiation1(){
         // : Given
+        String operation = "e";
         double num1 = 2.5;
         double num2 = 5;
         double expectedResult = 97.65625;
@@ -176,6 +189,7 @@ public class Basic_Tests extends BasicCalculator {
     // Test Exponentiation with negative exponent
     public void testExponentiation2(){
         // : Given
+        String operation = "e";
         double num1 = 2;
         double num2 = -5;
         double expectedResult = .03125;
@@ -189,6 +203,7 @@ public class Basic_Tests extends BasicCalculator {
     // Test Inverse - whole number
     public void testInverse1(){
         // : Given
+        String operation = "i";
         double num1 = 16;
         double expectedResult = .0625;
         // : When
@@ -201,6 +216,7 @@ public class Basic_Tests extends BasicCalculator {
     // Test Inverse - decimal
     public void testInverse2(){
         // : Given
+        String operation = "i";
         double num1 = .0625;
         double expectedResult = 16;
         // : When
@@ -213,6 +229,7 @@ public class Basic_Tests extends BasicCalculator {
     // Test Invert Sign - positive number
     public void testInvertSign1(){
         // : Given
+        String operation = "n";
         double num1 = 2;
         double expectedResult = -2;
         // : When
@@ -225,6 +242,7 @@ public class Basic_Tests extends BasicCalculator {
     // Test Invert Sign - negative number
     public void testInvertSign2(){
         // : Given
+        String operation = "n";
         double num1 = -2;
         double expectedResult = 2;
         // : When

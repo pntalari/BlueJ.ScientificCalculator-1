@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * @author Kate B. 02/09/19 (via leon on 8/26/18).
  */
-public class Scientific_Tests extends BasicCalculator {
+public class Scientific_Tests extends ScientificCalc {
     private static volatile BasicCalculator calc = new BasicCalculator();
 
 
@@ -16,7 +16,7 @@ public class Scientific_Tests extends BasicCalculator {
         double num1 = 60.3;
         double expectedResult = Math.sin(num1);
         // : When
-        double actualResult = calc.sine(num1);
+        double actualResult = calc.sin(num1);
         // : Then
         assertEquals(expectedResult,actualResult);
     }
@@ -28,7 +28,7 @@ public class Scientific_Tests extends BasicCalculator {
         double num1 = -60;
         double expectedResult = Math.sin(num1);
         // : When
-        double actualResult = calc.sine(num1);
+        double actualResult = calc.sin(num1);
         // : Then
         assertEquals(expectedResult,actualResult);
     }
@@ -40,7 +40,7 @@ public class Scientific_Tests extends BasicCalculator {
         double num1 = 60.3;
         double expectedResult = Math.cos(num1);
         // : When
-        double actualResult = calc.cosine(num1);
+        double actualResult = calc.cos(num1);
         // : Then
         assertEquals(expectedResult,actualResult);
     }
@@ -52,36 +52,11 @@ public class Scientific_Tests extends BasicCalculator {
         double num1 = -60;
         double expectedResult = Math.cos(num1);
         // : When
-        double actualResult = calc.cosine(num1);
+        double actualResult = calc.cos(num1);
         // : Then
         assertEquals(expectedResult,actualResult);
     }
-            
-
-    @Test
-    // Test Cosine - positive decimal
-    public void testCosine1(){
-        // : Given
-        double num1 = 60.3;
-        double expectedResult = Math.cos(num1);
-        // : When
-        double actualResult = calc.cosine(num1);
-        // : Then
-        assertEquals(expectedResult,actualResult);
-    }
-
-    @Test
-    // Test Cosine - negative number
-    public void testCosine2(){
-        // : Given
-        double num1 = -60;
-        double expectedResult = Math.cos(num1);
-        // : When
-        double actualResult = calc.cosine(num1);
-        // : Then
-        assertEquals(expectedResult,actualResult);
-    }
-
+        
     @Test
     // Test Tangent - positive decimal
     public void testTangent1(){
@@ -89,7 +64,7 @@ public class Scientific_Tests extends BasicCalculator {
         double num1 = 60.3;
         double expectedResult = Math.tan(num1);
         // : When
-        double actualResult = calc.cosine(num1);
+        double actualResult = calc.tan(num1);
         // : Then
         assertEquals(expectedResult,actualResult);
     }
@@ -101,7 +76,7 @@ public class Scientific_Tests extends BasicCalculator {
         double num1 = -60;
         double expectedResult = Math.tan(num1);
         // : When
-        double actualResult = calc.cosine(num1);
+        double actualResult = calc.tan(num1);
         // : Then
         assertEquals(expectedResult,actualResult);
     }
@@ -113,7 +88,7 @@ public class Scientific_Tests extends BasicCalculator {
         double num1 = 1;
         double expectedResult = 90;
         // : When
-        double actualResult = calc.inverseSine(num1);
+        double actualResult = calc.inverseSin(num1);
         // : Then
         assertEquals(expectedResult,actualResult);
     }
@@ -127,7 +102,7 @@ public class Scientific_Tests extends BasicCalculator {
         double num1 = 1;
         double expectedResult = 0;
         // : When
-        double actualResult = calc.inverseCosine(num1);
+        double actualResult = calc.inverseCos(num1);
         // : Then
         assertEquals(expectedResult,actualResult);
     }
