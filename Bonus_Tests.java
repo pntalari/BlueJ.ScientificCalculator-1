@@ -5,8 +5,8 @@ import static org.junit.Assert.assertEquals;
 /**
  * @author Kate B. 02/09/19 (via leon on 8/26/18).
  */
-public class Bonus_Tests extends BasicCalculator {
-    private static volatile BasicCalculator calc = new BasicCalculator();
+public class Bonus_Tests {
+    private static volatile BonusCalc calc = new BonusCalc();
 
 
     @Test
@@ -18,7 +18,7 @@ public class Bonus_Tests extends BasicCalculator {
         // : When
         double actualResult = calc.factorial(num1);
         // : Then
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult,actualResult, 0);
     }
 
     @Test
@@ -30,56 +30,56 @@ public class Bonus_Tests extends BasicCalculator {
         // : When
         double actualResult = calc.factorial(num1);
         // : Then
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult,actualResult, 0);
     }
     
     
     @Test
     // Test Log
-    public void testLog1(){
+    public void testTenPower1(){
         // : Given
         double num1 = 1000;
         double expectedResult = 3;
         // : When
-        double actualResult = calc.log(num1);
+        double actualResult = calc.tenPower(num1);
         // : Then
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult,actualResult, 0);
     }
 
     @Test
     // Test Log w/ negative number
-    public void testLog2(){
+    public void testTenPower2(){
         // : Given
         double num1 = -10;
         double expectedResult = Double.NaN;
         // : When
-        double actualResult = calc.log(num1);
+        double actualResult = calc.tenPower(num1);
         // : Then
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult,actualResult, 0);
     }
    
     @Test
     // Test 10^x
-    public void testTenPower1(){
+    public void testLog1(){
         // : Given
         double num1 = 3;
         double expectedResult = 100;
         // : When
-        double actualResult = calc.tenPower(num1);
+        double actualResult = calc.log(num1);
         // : Then
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult,actualResult, 0);
     }
    
     @Test
     // Test 10^x
-    public void testTenPower2(){
+    public void testLog2(){
         // : Given
         double num1 = -3;
         double expectedResult = .001;
         // : When
         double actualResult = calc.tenPower(num1);
         // : Then
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult,actualResult, 0);
     }
     
     @Test
@@ -91,7 +91,7 @@ public class Bonus_Tests extends BasicCalculator {
         // : When
         double actualResult = calc.ln(num1);
         // : Then
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult,actualResult, 0);
     } 
    
     @Test
@@ -99,11 +99,11 @@ public class Bonus_Tests extends BasicCalculator {
     public void testLn2(){
         // : Given
         double num1 = -10;
-        String expectedResult = Double.NaN;
+        double expectedResult = Double.NaN;
         // : When
         double actualResult = calc.ln(num1);
         // : Then
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult,actualResult, 0);
     }
         
     @Test
@@ -115,19 +115,19 @@ public class Bonus_Tests extends BasicCalculator {
         // : When
         double actualResult = calc.eTox(num1);
         // : Then
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult,actualResult, 0);
     }
    
     @Test
     // Test e^x w/ negative number
-    public void testEtox(){
+    public void testEtox1(){
         // : Given
         double num1 = -10;
-        String expectedResult = Double.NaN;
+        double expectedResult = Double.NaN;
         // : When
         double actualResult = calc.eTox(num1);
         // : Then
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult,actualResult, 0);
     }
             
     

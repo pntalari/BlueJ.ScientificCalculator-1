@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
  * @author Kate B. 02/09/19 (via leon on 8/26/18).
  */
 public class Scientific_Tests extends ScientificCalc {
-    private static volatile BasicCalculator calc = new BasicCalculator();
+    private static volatile ScientificCalc calc = new ScientificCalc();
 
 
     @Test
@@ -18,7 +18,7 @@ public class Scientific_Tests extends ScientificCalc {
         // : When
         double actualResult = calc.sin(num1);
         // : Then
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult,actualResult, 0);
     }
 
     @Test
@@ -30,7 +30,7 @@ public class Scientific_Tests extends ScientificCalc {
         // : When
         double actualResult = calc.sin(num1);
         // : Then
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult,actualResult, 0);
     }
 
     @Test
@@ -42,7 +42,7 @@ public class Scientific_Tests extends ScientificCalc {
         // : When
         double actualResult = calc.cos(num1);
         // : Then
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult,actualResult, 0);
     }
 
     @Test
@@ -54,7 +54,7 @@ public class Scientific_Tests extends ScientificCalc {
         // : When
         double actualResult = calc.cos(num1);
         // : Then
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult,actualResult, 0);
     }
         
     @Test
@@ -66,7 +66,7 @@ public class Scientific_Tests extends ScientificCalc {
         // : When
         double actualResult = calc.tan(num1);
         // : Then
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult,actualResult, 0);
     }
 
     @Test
@@ -78,7 +78,7 @@ public class Scientific_Tests extends ScientificCalc {
         // : When
         double actualResult = calc.tan(num1);
         // : Then
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult,actualResult, 0);
     }
                            
     @Test
@@ -90,19 +90,19 @@ public class Scientific_Tests extends ScientificCalc {
         // : When
         double actualResult = calc.inverseSin(num1);
         // : Then
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult,actualResult, 0);
     }
 
     @Test
     // Test inverse sine NAN when >1
-    public void testInverseSine1(){
+    public void testInverseSine2(){
         // : Given
         double num1 = 2;
         double expectedResult = Double.NaN;
         // : When
         double actualResult = calc.inverseSin(num1);
         // : Then
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult,actualResult, 0);
     }
 
     
@@ -115,7 +115,7 @@ public class Scientific_Tests extends ScientificCalc {
         // : When
         double actualResult = calc.inverseCos(num1);
         // : Then
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult,actualResult, 0);
     }
           
     @Test
@@ -127,7 +127,7 @@ public class Scientific_Tests extends ScientificCalc {
         // : When
         double actualResult = calc.inverseCos(num1);
         // : Then
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult,actualResult, 0);
     } 
 
 }

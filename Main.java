@@ -20,40 +20,59 @@ public class Main
         System.out.println("Hello There, Welcome to my Calculator");
         Display disp = new Display();
         ScientificCalc sCalc = new ScientificCalc();
+        BasicCalc bCalc = new BasicCalc();
         disp.clearScreen();
 
         while (cont)
         {
             modeChoice = disp.getStringInput("Select mode, B:Basic or S:Scientific");
+            operation = operation.toLowerCase();
+            
 
             if (modeChoice.equals("B")|| modeChoice.equals("b"))
             {
+                operation = disp.getStringInput("Choose the Operation to perform:+, - , *, /, pow, sqr, sqrt, iSign, inv");
+                //disMode = disp.getStringInput("Choose the mode of result: Dec, Bin, Oct, Hex");
                 num1 = disp.getIntegerInput("Enter a number:");
-                num2 = disp.getIntegerInput("Enter a second number:");
-
-                disp.getStringInput("");
-                operation = disp.getStringInput("Choose the Operation to perform:+,-,*,/,^"); 
-                disMode = disp.getStringInput("Choose the mode of result: Dec, Bin, Oct, Hex");
-
-                switch (operation) 
+                if (operation.equals("sqr")||operation.equals("sqrt")||operation.equals("isign")||operation.equals("inv"))
                 {
-                    case "+": result = num1 + num2;
-                    break;
-                    case "-": result = num1 - num2;
-                    break;
-                    case "*": result = num1 * num2;
-                    break;
-                    case "/": result = num1 / num2;
-                    break;
-                    case "^": result = Math.pow(num1,num2);
-                    break;
-                    case "sqr": result = num1 * num1;
-                    break;
+                    switch(operation)
+                    {
+                        case "sqr": result = bCalc.sqr(num1);
+                        break;
+                        case "sqrt": result = bCalc.sqrt(num1);
+                        break;
+                        case "isign": result = bCalc.iSign(num1);
+                        break;
+                        case "inv": result = bCalc.inv(num1);
+                        break;
+                    }
+                   // finResult = sCalc.switchDisplayMode(disMode,result);
+                    disp.println("The result of %3.2f %s is: %s \n", num1,operation,result);
                 }
-                finResult = sCalc.switchDisplayMode(disMode,result);
-                disp.println("The result of %3.2f %s %3.2f is: %s \n", num1,operation,num2,finResult);
-            }
+                else if (operation.equals("+")||operation.equals("-")||operation.equals("*")||operation.equals("/")||operation.equals("pow"))
+                {
+                    num2 = disp.getIntegerInput("Enter a second number:");
+                    disp.getStringInput("");
+                    switch (operation) 
+                    {
+                        case "+": result = bCalc.add(num1,num2);
+                        break;
+                        case "-": result = bCalc.sub(num1,num2);
+                        break;
+                        case "*": result = bCalc.mult(num1,num2);
+                        break;
+                        case "/": result = bCalc.div(num1,num2);
+                        break;
+                        case "pow": result = bCalc.powe(num1,num2);
+                        break;
 
+                    }
+                    //finResult = sCalc.switchDisplayMode(disMode,result);
+                    disp.println("The result of %3.2f %s %3.2f is: %s \n", num1,operation,num2,result);
+                }
+
+            }
             else if (modeChoice.equals("S")||modeChoice.equals("s"))
             {
                 units = disp.getStringInput("Enter the trig units of mode: D for Degrees or R for Radians");

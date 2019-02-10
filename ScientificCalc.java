@@ -31,10 +31,11 @@ public class ScientificCalc extends Main
         {
             case "oct": convRes = Integer.toOctalString((int)result);
             break;
-            case "hex": convRes = Integer.toHexString((int)result);
+            case "hex": convRes = Double.toHexString(result);
             break;
             case "bin": convRes = Integer.toBinaryString((int)result);
-            break; 
+            break;
+            case "dec": convRes = Double.toString(result);
         }
         return convRes;
     }

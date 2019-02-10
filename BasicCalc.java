@@ -8,50 +8,57 @@ import java.lang.Math;
  */
 public class BasicCalc
 {
-    public static void main(String[] args)
+    public double add(double num1,double num2)
     {
-        double numberOne = 0;
-        double numberTwo = 0;
-        //String operator = "";
-        double result= 0.0;
-        Scanner scanObject = new Scanner(System.in);
-        //String operation = "";
-
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter first number:");
-        numberOne = scan.nextDouble() ;
-        System.out.println("Enter second number");
-        numberTwo = scan.nextInt();
-        System.out.println("What operation?");
-        System.out.println("( + ) ( - ) ( * ) ( / ) ( ^ ) ( sqr ) ( sqrt )");
-        //operation = scan.next();
-        String operator = scanObject.next();//.charAt(0);
-
-        
-        // System.out.println(result);
-
-        //operator = scan.next().charAt(0);
-        String s = "";
-        switch (operator) {
-            case "+": result = numberOne + numberTwo;
-            break;
-            case "-": result = numberOne - numberTwo;  
-            break;
-            case "*": result = numberOne * numberTwo;  
-            break;
-            case "/": result = numberOne / numberTwo;  
-            break;
-            case "^": result = Math.pow (numberOne,numberTwo);
-            break;
-            case "sqrt": result = Math.sqrt(numberOne);
-            break;
-            //case "sqr" :result = (numberOne+ (numberTwo / numberOne)) / 2;
-            //break;
-            //case "isign" : result = numberOne * -1;
-            //break;
-        }System.out.println(numberOne+" "+operator+" "+numberTwo+" = "+result);
+        double addValue = num1 + num2;
+        return addValue;
     }
 
-}
-// instance variables - replace the example below with your own
+    public double sub(double num1,double num2)
+    {
+        double subValue = num1 - num2;
+        return subValue;
+    }
 
+    public double mult(double num1,double num2)
+    {
+        double multValue = num1 * num2;
+        return multValue;
+    }
+
+    public double div(double num1,double num2)
+    {
+        double divValue = num1 / num2;
+        return divValue;
+    }
+
+    public double powe(double num1,double num2)
+    {
+        double poweValue = Math.pow(num1,num2);
+        return poweValue;
+    }
+
+    public double sqr(double num1)
+    {
+        double sqrValue = Math.pow(num1, 2);
+        return sqrValue;
+    }
+
+    public double sqrt(double num1)
+    {
+        double sqrtValue = Math.sqrt(num1);
+        return sqrtValue;
+    }
+
+    public double iSign(double num1)
+    {
+        double iSignValue = num1 * -1;
+        return iSignValue;
+    }
+    
+        public double inv(double num1)
+    {
+        double invValue = 1/num1;
+        return invValue;
+    }
+}
