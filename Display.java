@@ -44,15 +44,10 @@ public class Display
 
     public void clearScreen() 
     {  
-        println("\033[H\033[2J");  
+        println("\u000C");  
         System.out.flush();  
     } 
 
-    /**
-     * @param prompt : text to display to user
-     * @param args   : optional arguments to send for string formatting
-     * @return user's input as String
-     */
     public String getStringInput(String prompt, Object... args) {
         println(prompt,args);
         return scanner.nextLine();
@@ -98,21 +93,7 @@ public class Display
         return scanner.nextLong();
     }
 
-    //User should enter mode = 'S' to switch to scientific mode operation
-    /*Switch display mode (binary, octal, decimal, hexadecimal)
-    switchDisplayMode() should rotate through the options
-    switchDisplayMode(String mode) should set the display to the mode given
-    */
-    public void switchDisplayMode(String mode)
-    {
-        String calcMode = mode;
-    }
 
-    public double switchDisplayMode()
-    {
-        double res=0;
-        return res;
-    }
 
     /*Memory - Store up to one numeric value in memory for recall later (default to 0) *
     (M+ key) Add the currently displayed value to the value in memory (store in memory and update display) *

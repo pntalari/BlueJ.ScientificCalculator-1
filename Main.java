@@ -10,12 +10,16 @@ public class Main
         boolean cont = true;
         String modeChoice = "";
         String operation = "";
+        String units = "";
+        String disMode = "";
+        String finResult = "";
         double num1 = 0;
         double num2 = 0;
         double result = 0;
 
         System.out.println("Hello There, Welcome to my Calculator");
         Display disp = new Display();
+        ScientificCalc sCalc = new ScientificCalc();
         disp.clearScreen();
 
         while (cont)
@@ -26,7 +30,11 @@ public class Main
             {
                 num1 = disp.getIntegerInput("Enter a number:");
                 num2 = disp.getIntegerInput("Enter a second number:");
-                operation = disp.getStringInput("Enter the Operation to perform:");
+
+                disp.getStringInput("");
+                operation = disp.getStringInput("Choose the Operation to perform:+,-,*,/,^"); 
+                disMode = disp.getStringInput("Choose the mode of result: Dec, Bin, Oct, Hex");
+
                 switch (operation) 
                 {
                     case "+": result = num1 + num2;
@@ -39,13 +47,22 @@ public class Main
                     break;
                     case "^": result = Math.pow(num1,num2);
                     break;
+                    case "sqr": result = num1 * num1;
+                    break;
                 }
-                disp.getStringInput("The result of %s on %f %f is:", operation,num1,num2,result);
-
+                finResult = sCalc.switchDisplayMode(disMode,result);
+                disp.println("The result of %3.2f %s %3.2f is: %s \n", num1,operation,num2,finResult);
             }
+
             else if (modeChoice.equals("S")||modeChoice.equals("s"))
             {
-                ScientificCalc sCalc = new ScientificCalc();
+                units = disp.getStringInput("Enter the trig units of mode: D for Degrees or R for Radians");
+
+                num1 = disp.getIntegerInput("Enter a number:");
+                disp.getStringInput("");
+
+                operation = disp.getStringInput("Choose the Operation to perform: sin, cos, tan, asin, acos, atan");
+                disMode = disp.getStringInput("Choose the mode of result: dec, bin, oct, hex");
                 switch (operation)
                 {
                     case "sin": result = sCalc.sin(num1);
@@ -61,13 +78,20 @@ public class Main
                     case "atan": result = sCalc.inverseTan(num1);
                     break;
                 }
-                disp.getStringInput("The result of %s on %f is:", operation,num2,result);
+                if (units.equals("R") || units.equals("r"))
+                { 
+                    result = sCalc.switchUnitsMode(units, num1);
+                }
+                finResult = sCalc.switchDisplayMode(disMode,result);
+                disp.getStringInput("The result of %s on %3.2f is: %s \n", operation,num1,finResult);
             }
+
             else
             {
                 disp.getStringInput("Please enter valid selection:");   
             }
-            disp.clearScreen();
+
         }
+        disp.clearScreen();
     }
 }
