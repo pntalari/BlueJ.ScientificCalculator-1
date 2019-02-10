@@ -51,7 +51,7 @@ public class Bonus_Tests extends BasicCalculator {
     public void testLog2(){
         // : Given
         double num1 = -10;
-        String expectedResult = "err";
+        double expectedResult = Double.NaN;
         // : When
         double actualResult = calc.log(num1);
         // : Then
@@ -99,7 +99,7 @@ public class Bonus_Tests extends BasicCalculator {
     public void testLn2(){
         // : Given
         double num1 = -10;
-        String expectedResult = "err";
+        String expectedResult = Double.NaN;
         // : When
         double actualResult = calc.ln(num1);
         // : Then
@@ -123,7 +123,7 @@ public class Bonus_Tests extends BasicCalculator {
     public void testEtox(){
         // : Given
         double num1 = -10;
-        String expectedResult = "err";
+        String expectedResult = Double.NaN;
         // : When
         double actualResult = calc.eTox(num1);
         // : Then

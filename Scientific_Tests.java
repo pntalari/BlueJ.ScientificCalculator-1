@@ -93,11 +93,22 @@ public class Scientific_Tests extends ScientificCalc {
         assertEquals(expectedResult,actualResult);
     }
 
-    // Need 2nd test for inverse sine 
+    @Test
+    // Test inverse sine NAN when >1
+    public void testInverseSine1(){
+        // : Given
+        double num1 = 2;
+        double expectedResult = Double.NaN;
+        // : When
+        double actualResult = calc.inverseSin(num1);
+        // : Then
+        assertEquals(expectedResult,actualResult);
+    }
+
     
     @Test
     // Test inverse cosine
-    public void testInverseCosine(){
+    public void testInverseCosine1(){
         // : Given
         double num1 = 1;
         double expectedResult = 0;
@@ -107,6 +118,16 @@ public class Scientific_Tests extends ScientificCalc {
         assertEquals(expectedResult,actualResult);
     }
           
-    // Need 2nd test for inverse cosine 
+    @Test
+    // Test inverse cosine NAN when >1
+    public void testInverseCosine2(){
+        // : Given
+        double num1 = 2;
+        double expectedResult = Double.NaN;
+        // : When
+        double actualResult = calc.inverseCos(num1);
+        // : Then
+        assertEquals(expectedResult,actualResult);
+    } 
 
 }
