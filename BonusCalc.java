@@ -27,23 +27,27 @@ public class BonusCalc
      */
     public double factorial(double num1)
     {
-        double result = 0;
-        for (int i = 1; i<= num1 ;i++)
+        double result = 1;
+        for (double i = 1; i<= Math.abs(num1) ;i++)
         {
             result = result * i;
         }
-        return result;
+        
+        if( num1 >=0) {
+            return result;
+        } else{ return result * -1;}
+        
     }
 
-    public double tenPower(double num1)
+    public double logTen(double num1)
     {
         double result = Math.log10(num1);
         return result;
     }
     
-    public double log(double num1)
+    public double tenX(double num1)
     {
-        double result = Math.log(num1);
+        double result = Math.pow(10,num1);
         return result;
     }
 
@@ -55,7 +59,7 @@ public class BonusCalc
 
     public double ln(double num1)
     {
-        double result = Math.pow(10,num1);
+        double result = Math.log(num1);
         return result;
     }
 }
