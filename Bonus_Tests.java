@@ -35,49 +35,49 @@ public class Bonus_Tests {
     
     
     @Test
-    // Test Log
-    public void testTenPower1(){
+    // Test Log10
+    public void testLogTen1(){
         // : Given
         double num1 = 1000;
         double expectedResult = 3;
         // : When
-        double actualResult = calc.tenPower(num1);
+        double actualResult = calc.logTen(num1);
         // : Then
         assertEquals(expectedResult,actualResult, 0);
     }
 
     @Test
     // Test Log w/ negative number
-    public void testTenPower2(){
+    public void testLogTen2(){
         // : Given
         double num1 = -10;
         double expectedResult = Double.NaN;
         // : When
-        double actualResult = calc.tenPower(num1);
+        double actualResult = calc.logTen(num1);
         // : Then
         assertEquals(expectedResult,actualResult, 0);
     }
    
     @Test
     // Test 10^x
-    public void testLog1(){
+    public void testTenX1(){
         // : Given
         double num1 = 3;
-        double expectedResult = 100;
+        double expectedResult = 1000;
         // : When
-        double actualResult = calc.log(num1);
+        double actualResult = calc.tenX(num1);
         // : Then
         assertEquals(expectedResult,actualResult, 0);
     }
    
     @Test
     // Test 10^x
-    public void testLog2(){
+    public void testTenX2(){
         // : Given
         double num1 = -3;
         double expectedResult = .001;
         // : When
-        double actualResult = calc.tenPower(num1);
+        double actualResult = calc.tenX(num1);
         // : Then
         assertEquals(expectedResult,actualResult, 0);
     }
@@ -108,7 +108,7 @@ public class Bonus_Tests {
         
     @Test
     // Test e^x
-    public void testEtox(){
+    public void testEtox1(){
         // : Given
         double num1 = 10;
         double expectedResult = Math.exp(num1);
@@ -120,10 +120,10 @@ public class Bonus_Tests {
    
     @Test
     // Test e^x w/ negative number
-    public void testEtox1(){
+    public void testEtox2(){
         // : Given
         double num1 = -10;
-        double expectedResult = Double.NaN;
+        double expectedResult = Math.exp(num1);
         // : When
         double actualResult = calc.eTox(num1);
         // : Then
